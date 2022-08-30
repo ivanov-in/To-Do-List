@@ -4,10 +4,10 @@ import { TodoCheckbox } from "./TodoCheckbox";
 
 const TodoItem = ({ todoData }) => {
   return (
-    <div>
+    <button className="flex items-center mb-4 rounded-2xl bg-zinc-800 p-5 w-full">
       <TodoCheckbox isCompleted={todoData.isCompleted} />
       {todoData.title}
-    </div>
+    </button>
   );
 };
 
