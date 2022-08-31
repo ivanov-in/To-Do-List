@@ -1,7 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import { TodoItem } from "../components/TodoItem";
 
-const todos = [
+const todoData = [
   {
     id: "1",
     title: "First todo",
@@ -20,11 +21,13 @@ const todos = [
 ];
 
 const MainPage = () => {
+  const [todos, setTodos] = useState(todoData);
+
   return (
     <div className="text-white w-4/5 mx-auto">
-      <h1 className="text-2xl font-bold text-center mb-8">Todo List</h1>
+      <h1 className="text-2xl font-bold text-center mb-8 pt-10">Todo List</h1>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todoData={todo} />
+        <TodoItem key={todo.id} todoItem={todo} />
       ))}
     </div>
   );
